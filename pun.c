@@ -13,6 +13,6 @@
 
 int main (void)
 {
-  printf("To C, or not to C: that is the question.\n");
+  printf("\n\nTo C, or not to C: that is the question.\n\n");
   return 0;
 }
