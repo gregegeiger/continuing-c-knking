@@ -22,7 +22,7 @@ int main (void)
 
   printf ("Enter the date in the format mm/dd/yyyy: ");
 
-  scanf ("%2d/%2d/%4d",&day,&month,&year);
+  scanf ("%2d/%2d/%4d",&month,&day,&year);
   //
   // %2.2d the first 2 is the minimum field width m
   // the second 2 is the precision - the minimum number of characters
