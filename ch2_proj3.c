@@ -20,13 +20,13 @@ int main (void)
 {
   float radius;
 
-  printf ("What is the radius? ");
+  printf ("\nWhat is the radius (in meters)? ");
 
   scanf ("%f",&radius);
   
-  printf ("The volume of a sphere with %.2f radius is ",radius);
+  printf ("The volume of a sphere with %.2f m radius is ",radius);
 
-  printf ("%.2f\n",(4.0f/3.0f)*PI*radius*radius*radius);
+  printf ("%.2f cubic meters.\n\n",(4.0f/3.0f)*PI*radius*radius*radius);
 
   return (0);
 }
