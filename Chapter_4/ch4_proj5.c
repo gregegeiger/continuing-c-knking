@@ -30,9 +30,12 @@
 //  The text simplifies the calculation (no zero check on result) by
 //  changing it to :
 //
+//  9 - ( (TOTAL - 1) % 10 )
+
+//
 //  Sum the odd-numbered digits
 //  Multiply the result by 3
-//  Add the even-numbered digits
+//  Add the even-numbered digits - this is the TOTAL
 //  Subtract 1
 //  Calculate the remainder modulo 10
 //  Subtract this result from 9
