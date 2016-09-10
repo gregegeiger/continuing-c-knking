@@ -12,6 +12,8 @@
 // Prompt user for phone number and print this number with a different
 // format.
 //    
+// Enter phone number [(xxx) xxx-xxxx]: (123)456-7890
+// You entered: 123.456.7890
 //
 // http://knking.com/books/c2/answers/index.html
 //
