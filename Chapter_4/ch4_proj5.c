@@ -1,7 +1,7 @@
 //
 // 2016-09-03:geg
 //
-// Programming project 4 on page 71.
+// Programming project 5 on page 71.
 //
 // Text: "C Programming : A Modern Approach"
 // Edition: 2nd (August 2008)
