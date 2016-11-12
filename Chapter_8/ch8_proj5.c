@@ -28,10 +28,10 @@
 
 int main (void)
 {
-  int i, low_rate, num_years, year;
+  int i, imonth, low_rate, num_years, year;
   double value[5];
 
-  printf("Enter interest rate: ");
+  printf("Enter annual interest rate: ");
   scanf("%d",&low_rate);
 
   printf("Enter number of years: ");
@@ -57,7 +57,14 @@ int main (void)
     // Print the year
     printf("%3d    ",year);
     for (i = 0; i < NUM_RATES; i++) {
-      value[i] += (low_rate + i)/100.0 * value[i];
+      for (imonth=1 ; imonth<=12 ; imonth++){
+	//
+	// Note the use of cast
+	// Since value is a double float variable
+	// we must cast the calculation as a double result
+	//
+	value[i] += ((double) (low_rate + i)/12 )/100.0 * value[i];
+      }
       printf("%7.2f", value[i]);
     }
     printf("\n");
