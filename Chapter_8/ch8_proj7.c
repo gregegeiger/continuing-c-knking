@@ -25,13 +25,15 @@
 int main (void)
 {
   int array[5][5];
-  int row,column;
+  int row,column,i;
+  int sum_col[5]={0};
+  int sum_row[5]={0};
 
   for (row=0; row<NUM_ROWS; row++) {
 
     printf("Enter row %d values: ",row);
     scanf("%d %d %d %d %d",&array[row][0],&array[row][1],&array[row][2],&array[row][3],&array[row][4]);
-    printf("row var is %d\n",row);
+    for (i=0; i<NUM_COLS; i++) {sum_row[row] += array[row][i];}
     
   }
 
@@ -41,5 +43,11 @@ int main (void)
     }
     printf("\n");
   }
+
+  for (row=0; row<NUM_ROWS; row++) {
+    printf("%d ",sum_row[row]);
+  }
+
   return (0);
+
 }
