@@ -57,39 +57,26 @@ int main (void)
   int map_x = 0;
   int map_y = 0;
 
-  // Print empty map
 
-//   for (map_y = 0; map_y < 10; map_y++) {
-// 
-//     for (map_x=0; map_x < 10; map_x++) {
-// 
-//       printf("%c ",map[map_x][map_y]);
-// 
-//     }
-//     printf("\n");
-//   }
-//   
   //
-  // Call the random number function
-  // rand() returns a number between 0 and RAND_MAX
+  // Initialize random number generator
   //
-  // We want a random result 0 through 3
-  //
+  srand(time(NULL));
+
   for (index=0; index < max_move_count; index++) {
     //
     // Reset for next move
     //
     valid=0;
+    while (valid == 0) {
     //
     // Increment move counter
     //
-    if (move_count++ > max_move_count) { return 0; }
-    
-    while (valid == 0) {
+    if (move_count++ > max_move_count) { break; }
       //
       // Calculate random move value 0 through 3
       //
-      move = rand() % 4;
+    move = rand() % 4;
 
       // printf("move:%i\n",move);
 
