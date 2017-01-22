@@ -18,6 +18,7 @@
 #include <stdio.h>
 #include <unistd.h> //needed for sleep function
 
+#define MAP_SIZE 20
 //
 // Function to print the map
 //
@@ -31,18 +32,18 @@ void generate_random_walk(int n, int map[n][n]);
 int main (void)
 {
   //
-  // Create the map of 10 x 10 grid for the walk
+  // Create the map for the walk
   //
-  int map[10][10];
+  int map[MAP_SIZE][MAP_SIZE];
 
-  generate_random_walk(10,map);
+  generate_random_walk(MAP_SIZE,map);
 
 		      
   //
   // Start in the middle of the map
   //
-  int x=5,
-    y=5,
+  int x=MAP_SIZE/2,
+    y=MAP_SIZE/2,
     index=0,
     move=0,
     valid=0;
@@ -52,7 +53,7 @@ int main (void)
   int character = 65;
   map[x][y] = character++;
 
-  print_array(10,map);
+  print_array(MAP_SIZE,map);
 
 
 
@@ -76,7 +77,7 @@ int main (void)
 
   for (index=0; index < max_move_count; index++) {
 
-    print_array(10,map);
+    print_array(MAP_SIZE,map);
 
     if (character != '@') {
       sleep(1);
@@ -92,7 +93,7 @@ int main (void)
       // Increment move counter
       //
       if (move_count++ > max_move_count) {
-	printf("Done!\n\n\n\n\n");
+	printf("\n\n\n\nDone!\n\n\n\n\n");
 	return;
       }
       //
@@ -168,7 +169,7 @@ int main (void)
   }
 
       
-  printf ("Done!\n\n\n\n\n");
+  printf ("\n\n\n\nDone!\n\n\n\n\n");
 
   return (0);
 
@@ -182,9 +183,13 @@ void print_array( int map_size, int map[map_size][map_size]) {
   
   // Clear the screen
   printf("\033[H\033[J");
+  //
+  // Add a few newlines
+  printf("\n\n\n\n");
   
   // Print map
   for (map_y=0; map_y < map_size; map_y++) {
+    printf("       ");
     for (map_x=0; map_x < map_size; map_x++) {
       printf("%c ",map[map_x][map_y]);
     }
