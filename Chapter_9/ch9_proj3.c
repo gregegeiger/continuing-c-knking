@@ -31,6 +31,7 @@ void generate_random_walk(int n, int map[n][n]);
 
 int main (void)
 {
+
   //
   // Create the map for the walk
   //
@@ -51,6 +52,12 @@ int main (void)
   // Place the character A at the starting point
   //
   int character = 65;
+
+
+  while(1){
+  generate_random_walk(MAP_SIZE,map);
+
+
   map[x][y] = character++;
 
   print_array(MAP_SIZE,map);
@@ -60,7 +67,7 @@ int main (void)
   //
   // Maximum tries
   //
-  int max_move_count = 126;
+  int max_move_count = 500;
   int move_count = 0;
 
   //
@@ -79,7 +86,7 @@ int main (void)
 
     print_array(MAP_SIZE,map);
 
-    if (character != '@') {
+    if (character != 'A') {
       sleep(1);
     }
 
@@ -94,7 +101,8 @@ int main (void)
       //
       if (move_count++ > max_move_count) {
 	printf("\n\n\n\nTrapped!\n\n\n\n");
-	return;
+        sleep(5);
+	system("/home/greg/git/continuing-c-knking/Chapter_9/a.out");
       }
       //
       // Calculate random move value 0 through 3
@@ -175,7 +183,7 @@ int main (void)
 
       
   printf ("\n\n\n\n\n\n\n\n");
-
+  }
   return (0);
 
 }
@@ -200,7 +208,6 @@ void print_array( int map_size, int map[map_size][map_size]) {
     }
     printf("\n");
   }
-
   return;
 }  
 
