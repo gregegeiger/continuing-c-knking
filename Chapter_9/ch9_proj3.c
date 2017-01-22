@@ -31,7 +31,7 @@ void generate_random_walk(int n, int map[n][n]);
 int main (void)
 {
   //
-  // Create the map or 10 x 10 grid for the walk
+  // Create the map of 10 x 10 grid for the walk
   //
   int map[10][10];
 
@@ -47,9 +47,9 @@ int main (void)
     move=0,
     valid=0;
   //
-  // Place the character @ at the starting point
+  // Place the character A at the starting point
   //
-  int character = 64;
+  int character = 65;
   map[x][y] = character++;
 
   print_array(10,map);
@@ -92,7 +92,7 @@ int main (void)
       // Increment move counter
       //
       if (move_count++ > max_move_count) {
-	printf("Done!\n");
+	printf("Done!\n\n\n\n\n");
 	return;
       }
       //
@@ -168,7 +168,7 @@ int main (void)
   }
 
       
-  printf ("Done\n");
+  printf ("Done!\n\n\n\n\n");
 
   return (0);
 
