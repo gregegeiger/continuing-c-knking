@@ -93,7 +93,7 @@ int main (void)
       // Increment move counter
       //
       if (move_count++ > max_move_count) {
-	printf("\n\n\n\nDone!\n\n\n\n\n");
+	printf("\n\n\n\nTrapped!\n\n\n\n");
 	return;
       }
       //
@@ -163,13 +163,18 @@ int main (void)
       //
       if (character == '{') {character = '0';}
 
+      //
+      // If the next character is ':' change to '@'
+      //
+      if (character == ':') {character = '@';}
+
 
     }
 
   }
 
       
-  printf ("\n\n\n\nDone!\n\n\n\n\n");
+  printf ("\n\n\n\n\n\n\n\n");
 
   return (0);
 
