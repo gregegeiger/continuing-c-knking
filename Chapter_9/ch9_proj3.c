@@ -110,7 +110,7 @@ int main (void)
 	
       case 0: 
 	//	printf("case 0 move %i\n",move);
-	if (y+1>=0 && y+1 <=9 && map[x][y+1] == '.') {
+	if (y+1>=0 && y+1 < MAP_SIZE && map[x][y+1] == '.') {
 	  y=y+1;
 	  valid=1;
 	  map[x][y] = character++;
@@ -121,7 +121,7 @@ int main (void)
 	//
       case 1: 
 	// printf("case 1 move %i\n",move);
-	if (x+1>=0 && x+1<=9 && map[x+1][y] == '.') {
+	if (x+1>=0 && x+1< MAP_SIZE && map[x+1][y] == '.') {
 	  x=x+1;
 	  valid=1;
 	  map[x][y] = character++;
@@ -132,7 +132,7 @@ int main (void)
 	//
       case 2: 
 	// printf("case 2 move %i\n",move);
-	if (y-1>=0 && y-1<=9 && map[x][y-1] == '.') {
+	if (y-1>=0 && y-1< MAP_SIZE && map[x][y-1] == '.') {
 	  y=y-1;
 	  valid=1;
 	  map[x][y] = character++;
@@ -143,7 +143,7 @@ int main (void)
 	//
       case 3: 
 	// printf("case 3 move %i\n",move);
-	if (x-1>=0 && x-1<=9 && map[x-1][y] == '.') {
+	if (x-1>=0 && x-1< MAP_SIZE && map[x-1][y] == '.') {
 	  x=x-1;
 	  valid=1;
 	  map[x][y] = character++;
