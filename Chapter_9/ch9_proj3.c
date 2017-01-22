@@ -16,41 +16,46 @@
 //
 #include <stdbool.h>
 #include <stdio.h>
+#include <unistd.h> //needed for sleep function
 
 //
-//
+// Function to print the map
 //
 void print_array(int n,int map[n][n]);
+//
+// Function to intialize the map
+//
+void generate_random_walk(int n, int map[n][n]);
 
 
 int main (void)
 {
   //
-  // Create the map or 10 x 10 grid for the walk and initialize it to '.'
+  // Create the map or 10 x 10 grid for the walk
   //
-  int map[10][10] = { {'.','.','.','.','.','.','.','.','.','.'},
-		      {'.','.','.','.','.','.','.','.','.','.'},
-		      {'.','.','.','.','.','.','.','.','.','.'},
-		      {'.','.','.','.','.','.','.','.','.','.'},
-		      {'.','.','.','.','.','.','.','.','.','.'},
-		      {'.','.','.','.','.','.','.','.','.','.'},
-		      {'.','.','.','.','.','.','.','.','.','.'},
-		      {'.','.','.','.','.','.','.','.','.','.'},
-		      {'.','.','.','.','.','.','.','.','.','.'},
-		      {'.','.','.','.','.','.','.','.','.','.'} };
+  int map[10][10];
+
+  generate_random_walk(10,map);
+
 		      
   //
-  // Start in the upper left of the map
+  // Start in the middle of the map
   //
-  int x=0,
-    y=0,
+  int x=5,
+    y=5,
     index=0,
     move=0,
     valid=0;
   //
-  // Start with character @
+  // Place the character @ at the starting point
   //
   int character = 64;
+  map[x][y] = character++;
+
+  print_array(10,map);
+
+
+
   //
   // Maximum tries
   //
@@ -70,6 +75,9 @@ int main (void)
   srand(time(NULL));
 
   for (index=0; index < max_move_count; index++) {
+
+  print_array(10,map);
+
     //
     // Reset for next move
     //
@@ -137,8 +145,6 @@ int main (void)
 
   }
 
-  print_array(10,map);
-
       
 
 
@@ -152,12 +158,33 @@ void print_array( int map_size, int map[map_size][map_size]) {
   int map_x = 0;
   int map_y = 0;
   
+  // Clear the screen
+  printf("\033[H\033[J");
+  
   // Print map
   for (map_y=0; map_y < map_size; map_y++) {
     for (map_x=0; map_x < map_size; map_x++) {
       printf("%c ",map[map_x][map_y]);
     }
     printf("\n");
+  }
+  sleep(1);
+  return;
+}  
+
+
+void generate_random_walk( int map_size, int map[map_size][map_size]) {
+
+  int map_x = 0;
+  int map_y = 0;
+
+
+  // Initialize the map
+  //
+  for (map_y=0; map_y < map_size; map_y++) {
+    for (map_x=0; map_x < map_size; map_x++) {
+      map[map_x][map_y] = '.';
+    }
   }
   return;
 }  
