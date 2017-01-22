@@ -76,17 +76,25 @@ int main (void)
 
   for (index=0; index < max_move_count; index++) {
 
-  print_array(10,map);
+    print_array(10,map);
+
+    if (character != '@') {
+      sleep(1);
+    }
 
     //
     // Reset for next move
     //
     valid=0;
     while (valid == 0) {
+
       //
       // Increment move counter
       //
-      if (move_count++ > max_move_count) { break; }
+      if (move_count++ > max_move_count) {
+	printf("Done!\n");
+	return;
+      }
       //
       // Calculate random move value 0 through 3
       //
@@ -141,12 +149,26 @@ int main (void)
 	};
 	break;
       }
+
+      //
+      // If the next character is '[' change to 'a'
+      // We don't want [ \ ] ^ _ and ' on the map
+      //
+      if (character == '[') {character = 'a';}
+
+      //
+      // If the next character is '{' change to '0'
+      // We don't want { | } ~ on the map
+      //
+      if (character == '{') {character = '0';}
+
+
     }
 
   }
 
       
-
+  printf ("Done\n");
 
   return (0);
 
@@ -168,7 +190,7 @@ void print_array( int map_size, int map[map_size][map_size]) {
     }
     printf("\n");
   }
-  sleep(1);
+
   return;
 }  
 
