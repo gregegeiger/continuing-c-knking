@@ -14,10 +14,6 @@
 //
 // http://knking.com/books/c2/answers/index.html
 //
-//
-// Added this line to test git commit reversion.
-//
-
 #include <stdbool.h>
 #include <stdio.h>
 
