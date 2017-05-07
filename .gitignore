@@ -1,0 +1,17 @@
+#
+# 2017-05-07:geg
+#
+# Git Ignore File
+#
+
+#
+# Ignore the emacs backup files ending with ~
+#
+*~
+
+#
+# Ignore the emacs autosave files beginning with #
+#
+\#*
+
+
