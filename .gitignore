@@ -14,4 +14,8 @@
 #
 \#*
 
+#
+# Ignore the default compiled file
+#
+a.out
 
