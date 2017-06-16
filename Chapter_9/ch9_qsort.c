@@ -14,6 +14,7 @@
 //
 // http://knking.com/books/c2/answers/index.html
 //
+
 #include <stdbool.h>
 #include <stdio.h>
 
