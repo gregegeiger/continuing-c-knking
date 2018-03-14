@@ -7,7 +7,7 @@
 // Edition: 2nd (August 2008)
 // Author: K. N. King
 //
-// Copyright (c) 2017 G Geiger
+// Copyright (c) 2018 G Geiger
 //
 // Modify the stack example of section 10.2 (p. 221) so that it stores characters instead
 // of integers.  Add a main function to ask user to enter a series of braces and
